@@ -29,14 +29,14 @@ function mvf {
     return 1
   fi
 
-  mv $1 /tmp/__mvf_tmp_path
+  tmp_path = "$(mktemp)"
+  mv $1 "$tmp_path"
   rm -r $2
   mkdir -p "$(dirname $2)"
-  mv /tmp/__mvf_tmp_path $2
+  mv "$tmp_path" $2
 }
 
-alias home='cd ~ && clear'
-alias prj="cd $(cat ~/.config/current-prj-dir)"
+alias prj='cd "$(cat ~/.config/current-prj-dir)"'
 alias setprj='pwd > ~/.config/current-prj-dir'
 
 alias timesync='tlsdate -H mail.google.com -V'

@@ -41,6 +41,6 @@ alias setprj='pwd > ~/.config/current-prj-dir'
 
 alias timesync='tlsdate -H mail.google.com -V'
 
-if is-init {
+if is-init; then
   export PATH="$PATH:/usr/lib/llvm-6.0/bin:$WORKSPACE_DIR/bin"
-}
+fi

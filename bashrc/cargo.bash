@@ -18,6 +18,6 @@ alias ctar='ct --all --release'
 
 alias cexp='cargo +nightly rustc -- -Zunstable-options --pretty=expanded'
 
-if is-init {
+if is-init; then
   export PATH="$PATH:$HOME/.cargo/bin"
-}
+fi

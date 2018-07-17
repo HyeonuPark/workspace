@@ -61,6 +61,5 @@ source ~/.bashrc
 echo "Configure rust devtools"
 rustup toolchain install nightly
 rustup component add llvm-tools
-rustup component add --toolchain nightly rls-preview
+rustup component add --toolchain nightly rls-preview clippy-preview
 cargo install exa ripgrep loc cargo-binutils cargo-fuzz
-cargo +nightly install clippy

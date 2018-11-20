@@ -22,7 +22,7 @@ alias grb='git rebase'
 alias grs='git reset'
 
 alias gps="git push origin $(git-current-branch)"
-alias gpl="git merge --ff-only origin $(git-current-branch)"
+alias gpl="git merge --ff-only origin/$(git-current-branch)"
 
 alias gfa="git fetch --all"
 

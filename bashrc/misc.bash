@@ -1,5 +1,5 @@
 
-export PS1="\[\e[36;1m\]\w \[\e[32m\]$(git-current-branch)\[\e[33m\]\$ \[\e[0m\]"
+export PS1="\[\e[36;1m\]\w \[\e[32m\]\$(git-current-branch)\[\e[33m\]\$ \[\e[0m\]"
 
 export CC='clang'
 export CXX='clang++'
@@ -29,7 +29,7 @@ function mvf {
     return 1
   fi
 
-  tmp_path = "$(mktemp)"
+  tmp_path="$(mktemp)"
   mv $1 "$tmp_path"
   rm -r $2
   mkdir -p "$(dirname $2)"
@@ -38,6 +38,15 @@ function mvf {
 
 alias prj='cd "$(cat ~/.config/current-prj-dir)"'
 alias setprj='pwd > ~/.config/current-prj-dir'
+
+function cpp {
+  dir="$(mktemp -d)"
+
+  $CXX -o "$dir/bin" -std=c++14 "$1.cpp"
+  $dir/bin
+
+  rm -r "$dir"
+}
 
 alias timesync='tlsdate -H mail.google.com -V'
 
